@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tabelas HTML</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="titulo">Como criar tabelas no meu html!</h1>
+        </header>
+        <table border="1">
+            <caption>Tabela de Clientes</caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cidade</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Rodapé da tabela</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>20</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>25</td>
+                    <td>São Paulo</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table border="1">
+            <tr>
+                <td colspan="2">11111</td>
+                <td rowspan="2">22222</td>
+            </tr>
+            <tr>
+                <td rowspan="2">33333</td>
+                <td>44444</td>
+            </tr>
+            <tr>
+                <td colspan="2">55555</td>
+            </tr>
+        </table>
+        
+        <form action="processar_dados.php" method="post">
+            Nome: <input type="text" name="nome" id="nome" />
+            Senha: <input type="password" name="senha" id="senha" />
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
