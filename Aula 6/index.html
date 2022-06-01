@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>Formulários HTML</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="titulo">Como criar formulários no meu html!</h1>
+        </header>
+        <form action="processa_dados.php" method="get">
+            Nome: <input type="text" name="nome" maxlength="20" size="50" />
+            <br />
+            E-mail: <input type="email" name="email" autofocus />
+            <br />
+            Senha: <input type="password" name="senha" placeholder="Digite sua senha" />
+            <br />
+            Upload da foto: <input type="file" name="foto" />
+            <br />
+            Idade: <input type="number" name="idade" min="0" max="100" step="2" required />
+            <br />
+            Telefone: <input type="tel" name="telefone" disabled />
+            <br />
+            Classificação <input type="range" name="classificacao" />
+            <br />
+            Cor de preferência: <input type="color" name="cor" />
+            <br />
+            Data de nascimento: <input type="date" name="data" />
+            <br />
+            Data e hora: <input type="datetime-local" name="data_hora" />
+            <br />
+            Pesquisa: <input type="search" name="pesquisa" />
+            <br />
+            Sexo: <input type="radio" name="sexo" value="m" />Masculino
+            <input type="radio" name="sexo" value="f" />Feminino
+            <br />
+            <input type="checkbox" name="termos" checked /> Concordo com os termos do contrato
+            <br />
+            <input type="reset" value="Limpar" />
+            <input type="submit" value="Enviar" />
+            <input type="image" src="img/botao.png" alt="Enviar" />
+        </form>
+    </body>
+</html>
