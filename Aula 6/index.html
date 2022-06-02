@@ -3,17 +3,27 @@
     <head>
         <meta charset="utf-8" />
         <title>Formulários HTML</title>
+        <script>
+            function qualquercoisa(){
+                return resultado.value = classificacao.value;
+            }
+        </script>
     </head>
     <body>
         <header>
             <h1 id="titulo">Como criar formulários no meu html!</h1>
         </header>
         <form action="processa_dados.php" method="get">
-            Nome: <input type="text" name="nome" maxlength="20" size="50" />
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" maxlength="20" size="50" />
             <br />
-            E-mail: <input type="email" name="email" autofocus />
-            <br />
-            Senha: <input type="password" name="senha" placeholder="Digite sua senha" />
+            <fieldset id="login">
+                <legend>Login</legend>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" autofocus />
+                <br />
+                Senha: <input type="password" name="senha" placeholder="Digite sua senha" />
+            </fieldset>
             <br />
             Upload da foto: <input type="file" name="foto" />
             <br />
@@ -21,18 +31,64 @@
             <br />
             Telefone: <input type="tel" name="telefone" disabled />
             <br />
-            Classificação <input type="range" name="classificacao" />
+            Classificação 
+            <input type="range" name="classificacao" id="classificacao"
+            min="0" max="10" value="0" oninput="qualquercoisa()" /> 
+            <output for="classificacao" name="resultado" id="resultado">0</output>
             <br />
             Cor de preferência: <input type="color" name="cor" />
             <br />
             Data de nascimento: <input type="date" name="data" />
             <br />
+            UF: 
+            <select name="uf">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+            <br />
             Data e hora: <input type="datetime-local" name="data_hora" />
             <br />
-            Pesquisa: <input type="search" name="pesquisa" />
+            Modelo de carro: <input type="search" name="carro" list="carros" />
+            <datalist id="carros">
+                <option value="Fusca">
+                <option value="Gol">
+                <option value="Palio">
+                <option value="Uno">
+                <option value="Celta">
+                <option value="Fiesta">
+                <option value="Corsa">
+                <option value="Siena">
+            </datalist>
             <br />
             Sexo: <input type="radio" name="sexo" value="m" />Masculino
             <input type="radio" name="sexo" value="f" />Feminino
+            <br />
+            Biografia:<br /> <textarea name="biografia" cols="50" rows="5"></textarea>
             <br />
             <input type="checkbox" name="termos" checked /> Concordo com os termos do contrato
             <br />
